@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import com.test.driver.DriverFactory;
 import com.test.reporting.ReportManager;
 import com.test.utils.ScreenshotUtils;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.*;
 
 public class Hooks {
