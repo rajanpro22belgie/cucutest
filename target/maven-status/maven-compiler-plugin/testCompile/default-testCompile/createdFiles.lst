@@ -1,3 +1,5 @@
+com\test\reporting\ReportManager.class
 stepDefinition\LoginSteps.class
 RunCucumberTest.class
+com\test\utils\ScreenshotUtils.class
 hooks\Hooks.class
