@@ -2,9 +2,9 @@ name: UI Automation Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   run-tests:
@@ -35,9 +35,8 @@ jobs:
           name: cucumber-report
           path: target/
 
-     - name: Upload Extent Report
-       uses: actions/upload-artifact@v4
-       with:
-         name: extent-report
-    	 path: target/ExtentReport.html
-
+      - name: Upload Extent Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: extent-report
+          path: target/ExtentReport.html
