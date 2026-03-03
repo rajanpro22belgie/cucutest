@@ -26,20 +26,22 @@ jobs:
       - name: Install ChromeDriver
         uses: nanasess/setup-chromedriver@v2
 
+      - name: Create target folder
+        run: mkdir -p target
+
       - name: Run tests
         run: mvn clean test -Dtest=RunCucumberTest
 
       - name: Upload Cucumber Reports
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: cucumber-report
-    path: target/
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: target/
 
-- name: Upload Extent Report
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: extent-report
-    path: target/ExtentReport.html
-
+      - name: Upload Extent Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extent-report
+          path: target/ExtentReport.html
