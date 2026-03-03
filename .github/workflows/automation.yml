@@ -30,13 +30,16 @@ jobs:
         run: mvn clean test -Dtest=RunCucumberTest
 
       - name: Upload Cucumber Reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: cucumber-report
-          path: target/
+  if: always()
+  uses: actions/upload-artifact@v4
+  with:
+    name: cucumber-report
+    path: target/
 
-      - name: Upload Extent Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: extent-report
-          path: target/ExtentReport.html
+- name: Upload Extent Report
+  if: always()
+  uses: actions/upload-artifact@v4
+  with:
+    name: extent-report
+    path: target/ExtentReport.html
+
